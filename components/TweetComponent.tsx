@@ -90,16 +90,16 @@ export default function TweetComponent({ tweet }: Props) {
           </Flex>
           <Text>{tweet.text}</Text>
           {tweet.image && (
-            <Box>
+            <Box rounded='lg'>
               <Image
                 src={tweet.image}
                 alt='image'
                 blurDataURL='URL'
                 placeholder='blur'
-                objectFit='cover'
+                objectFit='contain'
                 layout='responsive'
-                width='50%'
-                height='50%'
+                width='100%'
+                height='100%'
                 className='tweetImage'
               />
             </Box>
@@ -173,7 +173,7 @@ export default function TweetComponent({ tweet }: Props) {
               /> */}
               <Avatar name={item.username} src={item.profileImg} />
               <Box w='full'>
-                <Stack spacing={2} align='start' direction={{ base:'column', md:'row'}}>
+                <Stack spacing={1} align='start' direction={{ base:'column', md:'row'}}>
                   <Text
                     mr={1}
                     fontWeight='bold'

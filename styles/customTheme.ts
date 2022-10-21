@@ -31,12 +31,6 @@ const theme = extendTheme(
             transition: 'all 0.5s ease',
           },
         },
-        '.navbar-active': {
-          visibility: {
-            base: 'hidden',
-            md: 'visible',
-          },
-        },
         '::-webkit-scrollbar': {
           width: '1px',
         },
