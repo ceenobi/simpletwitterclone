@@ -16,7 +16,7 @@ import SidebarRow from './SidebarRow'
 export default function Sidebar() {
   const { data: session } = useSession()
   return (
-    <GridItem colSpan={2}>
+    <GridItem colSpan={2} >
       <Flex direction='column' align={{ base: 'center', md: 'start' }} px={4}>
         <Image
           src='https://res.cloudinary.com/ceenobi/image/upload/v1666168276/icons/Logo_blue_qbscqf.svg'

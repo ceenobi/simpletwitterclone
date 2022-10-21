@@ -19,14 +19,14 @@ export default function Feed({ tweets: tweetsProp }: Props) {
     const tweets = await fetchTweets()
     setTweets(tweets)
     toast.success('Feed updated!', {
-      id: refreshToast
+      id: refreshToast,
     })
   }
   return (
     <GridItem
       colSpan={{ base: 7, lg: 5 }}
       borderX='.5px solid #A0AEC0'
-       maxH='100vh'
+      maxH='100vh'
       overflow='scroll'
     >
       <Flex justify='space-between' align='center'>

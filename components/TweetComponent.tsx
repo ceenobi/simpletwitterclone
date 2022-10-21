@@ -9,6 +9,7 @@ import {
   chakra,
   Input,
   Button,
+  Stack
 } from '@chakra-ui/react'
 import Image from 'next/image'
 import TimeAgo from 'react-timeago'
@@ -160,7 +161,7 @@ export default function TweetComponent({ tweet }: Props) {
           borderY='.5px solid #A0AEC0'
         >
           {comment.map((item) => (
-            <Flex key={item._id} gap={2} pos='relative'>
+            <Flex key={item._id} gap={2} pos='relative' mb={3}>
               {/* <Divider
                 orientation='vertical'
                 pos='absolute'
@@ -171,9 +172,13 @@ export default function TweetComponent({ tweet }: Props) {
                 borderColor='twitter'
               /> */}
               <Avatar name={item.username} src={item.profileImg} />
-              <Box>
-                <HStack spacing={2} align='center'>
-                  <Text mr={1} fontWeight='bold'>
+              <Box w='full'>
+                <Stack spacing={2} align='start' direction={{ base:'column', md:'row'}}>
+                  <Text
+                    mr={1}
+                    fontWeight='bold'
+                    fontSize={{ base: 'sm', md: 'lg' }}
+                  >
                     {item.username}
                   </Text>
                   <Text
@@ -187,7 +192,7 @@ export default function TweetComponent({ tweet }: Props) {
                     date={item._createdAt}
                     style={{ fontSize: '12px', color: 'gray' }}
                   />
-                </HStack>
+                </Stack>
                 <Text>{item.comment}</Text>
               </Box>
             </Flex>

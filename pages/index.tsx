@@ -24,11 +24,11 @@ const Home = ({ tweets }: Props) => {
           templateColumns='repeat(9, 1fr)'
           maxW='container.xl'
           mx='auto'
-          maxH='100%'
+          maxH='100vh'
           overflow='hidden'
         >
           <Sidebar />
-          <Feed tweets={tweets}/>
+          <Feed tweets={tweets} />
           <Widgets />
         </Grid>
       </main>
@@ -38,7 +38,7 @@ const Home = ({ tweets }: Props) => {
 
 export default Home
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const tweets = await fetchTweets()
   return {
     props: {
